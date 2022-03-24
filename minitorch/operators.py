@@ -126,7 +126,7 @@ def relu(x):
     Returns:
         float : relu value
     """
-    return x if x > 0 else 0
+    return x if x > 0 else 0.0
 
 
 EPS = 1e-6
@@ -145,25 +145,25 @@ def exp(x):
 def log_back(x, d):
     r"If :math:`f = log` as above, compute d :math:`d \times f'(x)`"
 
-    return d * 1 / x
+    return d * 1.0 / x
 
 
 def inv(x):
     ":math:`f(x) = 1/x`"
 
-    return 1 / x
+    return 1.0 / x
 
 
 def inv_back(x, d):
     r"If :math:`f(x) = 1/x` compute d :math:`d \times f'(x)`"
 
-    return -d / (x ** 2)
+    return -d / (x * x)
 
 
 def relu_back(x, d):
     r"If :math:`f = relu` compute d :math:`d \times f'(x)`"
 
-    return d if x >= 0 else 0
+    return d if x >= 0 else 0.0
 
 
 # ## Task 0.3

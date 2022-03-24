@@ -46,7 +46,7 @@ def test_chain_rule1():
 
 @pytest.mark.task1_3
 def test_chain_rule2():
-    "Check that constrants are ignored and variables get derivatives."
+    "Check that constants are ignored and variables get derivatives."
     var = minitorch.Variable(History())
     constant = minitorch.Variable(None)
     back = Function1.chain_rule(ctx=None, inputs=[var, constant], d_output=5)
@@ -59,7 +59,7 @@ def test_chain_rule2():
 
 @pytest.mark.task1_3
 def test_chain_rule3():
-    "Check that constrants are ignored and variables get derivatives."
+    "Check that constants are ignored and variables get derivatives."
     constant = 10
     var = minitorch.Scalar(5)
 
@@ -138,3 +138,7 @@ def test_backprop4():
     var4 = Function1.apply(var2, var3)
     var4.backward(d_output=5)
     assert var0.derivative == 10
+
+
+if __name__ == '__main__':
+    test_chain_rule4()

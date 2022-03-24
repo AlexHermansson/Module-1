@@ -86,7 +86,6 @@ def test_two_derivative(fn, t1, t2):
     name, _, scalar_fn = fn
     derivative_check(scalar_fn, t1, t2)
 
-
 def test_scalar_name():
     x = Scalar(10, name="x")
     y = (x + 10.0) * 20
